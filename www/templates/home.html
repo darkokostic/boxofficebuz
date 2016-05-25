@@ -12,8 +12,8 @@
     <ion-slide-box on-slide-changed="slideHasChanged($index)" ng-if="isLoaded">
       <ion-slide ng-repeat="item in featureNews">
         <span like-btn newsid="item.id" likes="item.likes"></span>
-        <a class="img-place" ui-sref="app.news({id: item.id})" style="background-image: url({{imageURL}}{{item.image}})" >
-        	<h3>{{item.heading}}</h3>
+        <a class="img-place" ui-sref="app.news({id: item.id})" style="background-image: url({{item.thumbnail}})" >
+        	<h3>{{item.title}}</h3>
         	<h4 class="feature-news">Featured</h4>
         </a>
       </ion-slide>
@@ -31,9 +31,9 @@
         image-lazy-background-image="true"
         image-lazy-loader="lines">
         </div> -->
-        <div class="image" style="background-image: url('{{imageURL}}{{news.image}}')">
+        <div class="image" style="background-image: url('{{news.thumbnail}}')">
         </div>
-        <h3>{{news.heading}}</h3>
+        <h3>{{news.title}}</h3>
       </a>
 		  </ion-item>
 		</ion-list>   

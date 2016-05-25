@@ -20,6 +20,7 @@ app
     // top slider
     function featureNews(dorefresh) {
       dataservice.getFeaturedNews().then(function (response) {
+
         $scope.featureNews = response.data;
         $scope.isLoaded = true;
         if (dorefresh) {
@@ -44,9 +45,10 @@ app
     $rootScope.$on('pullToData', function(){
       // latest post
       dataservice.getLatestNews().then(function(response){
-        $scope.nextPageURL = response.data.next_page_url;
+        //$scope.nextPageURL = response.data.next_page_url;
         $scope.$broadcast('scroll.refreshComplete');
-        $scope.newslist = response.data.data;
+        console.log(response.data);
+        $scope.newslist = response.data;
         $scope.loadMore = true;
       });
 
@@ -61,8 +63,8 @@ app
         $scope.loadMore = false;
       }
       dataservice.getLatestNews($scope.nextPageURL).then(function(response){
-        $scope.nextPageURL = response.data.next_page_url;
-        Array.prototype.push.apply($scope.newslist, response.data.data);
+        //$scope.nextPageURL = response.data.next_page_url;
+        Array.prototype.push.apply($scope.newslist, response.data);
        
         $rootScope.$broadcast('hideloader');
       }).finally(function(){

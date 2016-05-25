@@ -2,7 +2,7 @@
 app
 .constant('appConfig', {
   simmode: true,
-  apiEndPoint: 'http://ec2-52-21-107-249.compute-1.amazonaws.com/cnews/public/api/v1/news',
+  apiEndPoint: 'https://boxofficebuz.p.mashape.com',
   imgURL: 'http://ec2-52-21-107-249.compute-1.amazonaws.com/cnews/public/',
   baseURL: 'http://ec2-52-21-107-249.compute-1.amazonaws.com/cnews/public/api/v1',
   dataServiceError:'Some error message',

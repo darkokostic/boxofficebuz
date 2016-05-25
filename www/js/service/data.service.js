@@ -24,8 +24,10 @@ service('dataservice', [
 
 		function _getFeaturedNews () {
 			var dfd = $q.defer();
-			var url = appConfig.apiEndPoint + '/feature';
-			$http.get(url)
+			var url = appConfig.apiEndPoint + '/v1/news/latest';
+			$http.get(url, {
+				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
+			})
 			.success(function(data){
 				dfd.resolve(data);
 			});
@@ -35,10 +37,12 @@ service('dataservice', [
 		function _getLatestNews (enpoint) {
 			var dfd = $q.defer();
 			if (!enpoint) {
-				enpoint = appConfig.apiEndPoint + '/latest';
+				enpoint = appConfig.apiEndPoint + '/v1/news/latest';
 			}
 			var url = enpoint;
-			$http.get(url)
+			$http.get(url, {
+				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
+			})
 			.success(function(data){
 				dfd.resolve(data);
 			});
