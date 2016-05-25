@@ -1,0 +1,80 @@
+<ion-view class="news-details">
+	<ion-nav-buttons side="right" class="icon ion-share">
+		<button class="button button-icon button-clear ion-ios-book-outline" ng-click="addToBookmark(data)">
+	  </button>
+	  <button class="button button-icon button-clear ion-android-share-alt" ng-click="sharePost()">
+	  </button>
+	</ion-nav-buttons>
+
+	<div class="post-share ng-hide" ng-show="showShare">
+		<h3>Share this page</h3>
+	  <div class="tabs tabs-icon-top">
+	  	<div class="tab-item fb">
+	  		<a ng-click="share('fb')">
+	  		  <i class="icon ion-social-facebook"></i>
+	  		  Facebook
+	  		</a>
+	  	</div>
+			<div class="tab-item fb">
+		    <a ng-click="share('tw')">
+		      <i class="icon ion-social-twitter"></i>
+		      Twitter
+		    </a>
+	    </div>
+	    <div class="tab-item wtsapp">
+	    	<a ng-click="shareViaWhatsApp()">
+	    	  <i class="icon ion-social-whatsapp"></i>
+	    	  WhatsApp
+	    	</a>
+	    </div>
+	  </div>
+	  <div class="tabs tabs-icon-bottom">
+	  	<div class="tab-item gplus">
+	  		<a ng-click="share('gp')">
+	  		  <i class="icon ion-social-googleplus"></i>
+	  		  Google Plus
+	  		</a>
+	  	</div>	  	
+	    <div class="tab-item pint">
+	    	<a ng-click="share('pt')">
+	    	  <i class="icon ion-social-pinterest-outline"></i>
+	    	  Pinterest
+	    	</a>
+	    </div>
+	    <div class="tab-item insta">
+	  		<a ng-click="shareViaAll()">
+	  		  <i class="icon ion-more"></i>
+	  		  Other
+	  		</a>
+	  	</div>
+	  </div>
+	</div>
+
+  <ion-content ng-click="hideshare()" on-scroll-complete="showad()" delegate-handle="scroller">
+  	<pre-img ratio="_1_1" helper-class="news-img">
+  	  <img class="thumbnail" ng-src="{{imageURL}}{{data.image}}" spinner-on-load>
+  	</pre-img>
+		
+		<div class="heading-todays-v2">
+			<h3>{{data.source}}</h3>
+			<div><i class="ion-ios-calendar-outline"></i> <span>{{data.created_at | date:'yyyy-MM-dd' }}</span></div>
+			<div><i class="ion-ios-time-outline"></i> <span>{{data.created_at | date:'HH:mm' }}</span></div>
+		</div>
+
+		<!-- <h3 class="heading-todays news-detail">{{data.source}} <span><i class="ion-ios-calendar-outline"></i>
+		{{data.created_at | date:'yyyy-MM-dd' }}
+		</span> <span><i class="ion-ios-time-outline"></i>{{data.created_at | date:'HH:mm' }}</span>
+		</h3> -->
+
+		<div class="news-desc padding">
+			<h3>{{data.heading}}</h3>
+		
+
+			<div ng-bind-html=data.details>
+				
+			</div>
+		</div>
+
+
+  </ion-content>
+</ion-view>

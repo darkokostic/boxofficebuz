@@ -1,0 +1,38 @@
+<ion-view class="searchPage">
+  <ion-content class="padding searchForm">
+    <form name="searchForm" class="search-form" ng-submit="searchSubmit(searchForm)">
+      <div class="list list-inset">
+        <label class="item item-input" >
+          <input type="text" 
+          placeholder="Enter search keyword" name="search" 
+          ng-model="searchWord.search" ng-minlength="3" required>
+        </label>
+      </div>
+        <button type="submit" ng-disabled="searchForm.$invalid" 
+        class="button button-block button-positive activated">Submit</button>
+    </form>
+  </ion-content>
+  <ion-content class="homepage">
+  <div class=""  ng-if="searchResults">
+    
+  
+    <h2 class="heading-todays"><span>Search Results</span></h2>
+
+    <ion-list class="search-result-list">
+      <ion-item ng-repeat="searchResult in searchResults" ui-sref="app.news({id: searchResult.id})">
+        <div class="figure" 
+        style="background: url({{imageURL}}{{searchResult.image}}) #000 no-repeat center; background-size: contain;">
+        </div>
+        <div class="figc">
+          <h3>{{searchResult.heading}}</h3>
+          <h4 class="likes"><i class="ion-heart"></i>{{searchResult.likes}}</h4>
+        </div>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+  <h4 class="no-search" ng-if="searchResults.length == 0">Sorry, no results.</h4>
+
+  </ion-content>
+</ion-view>

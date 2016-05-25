@@ -1,0 +1,56 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-title class="logo">
+        <a href="#/app/home"><img src="img/logo.png"></a>
+      </ion-nav-title>
+      <ion-nav-buttons side="left">
+        <!-- <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button> -->
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="right" ng-click="showSubMenu = !showSubMenu"></button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="right">
+    <ion-content>
+      <ion-list>
+
+        <ion-item ng-click="showSubMenu = !showSubMenu">
+          <i class="ion-ios-list-outline"></i>Category
+          <ion-list ng-show="showSubMenu" class="submenu">
+
+            <ion-item menu-close class="submenu" ng-repeat="category in categories" ui-sref="app.newslist({id: category.id})">
+              <i class="ion-android-send"></i>{{category.name}}
+            </ion-item>
+
+          </ion-list>
+        </ion-item>
+        <ion-item menu-close ui-sref="app.bookmarklist">
+          <i class="ion-ios-book-outline"></i>Bookmarks
+        </ion-item>
+        <ion-item menu-close ng-click="promtRate()">
+          <i class="ion-ios-star-half"></i>Rate App
+        </ion-item>
+        <ion-item menu-close ng-click="pullToData()">
+          <i class="ion-android-refresh"></i>Refresh
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+          <i class="ion-android-search"></i>Search
+        </ion-item>
+        <ion-item menu-close ui-sref="app.admob">
+          <i class="ion-cash"></i>Admob
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+</ion-side-menus>
