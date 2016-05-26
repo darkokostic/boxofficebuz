@@ -27,8 +27,17 @@
           <i class="ion-ios-list-outline"></i>Category
           <ion-list ng-show="showSubMenu" class="submenu">
 
-            <ion-item menu-close class="submenu" ng-repeat="category in categories" ui-sref="app.newslist({id: category.id})">
-              <i class="ion-android-send"></i>{{category.name}}
+            <ion-item menu-close class="submenu" ui-sref="app.movies">
+              <i class="ion-android-send"></i>Movies
+            </ion-item>
+            <ion-item menu-close class="submenu" ui-sref="app.tv">
+              <i class="ion-android-send"></i>TV
+            </ion-item>
+            <ion-item menu-close class="submenu" ui-sref="app.games">
+              <i class="ion-android-send"></i>Games
+            </ion-item>
+            <ion-item menu-close class="submenu" ui-sref="app.videos">
+              <i class="ion-android-send"></i>Videos
             </ion-item>
 
           </ion-list>

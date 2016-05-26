@@ -165,6 +165,86 @@ app = angular.module('newsapp', [
     }
   })
 
+   .state('app.movie', {
+    url: '/movie/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/movie.html',
+        controller: 'movieCtrl'
+      }
+    }
+  })
+
+   .state('app.tvSingle', {
+    url: '/tvSingle/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/tvSingle.html',
+        controller: 'tvSingleCtrl'
+      }
+    }
+  })
+
+   .state('app.game', {
+    url: '/game/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/game.html',
+        controller: 'gameCtrl'
+      }
+    }
+  })
+
+   .state('app.video', {
+    url: '/video/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/video.html',
+        controller: 'videoCtrl'
+      }
+    }
+  })
+
+   .state('app.movies', {
+    url: '/movies',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/movies.html',
+        controller: 'moviesCtrl'
+      }
+    }
+  })
+
+   .state('app.tv', {
+    url: '/tv',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/tv.html',
+        controller: 'tvCtrl'
+      }
+    }
+  })
+
+   .state('app.games', {
+    url: '/games',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/games.html',
+        controller: 'gamesCtrl'
+      }
+    }
+  })
+
+   .state('app.videos', {
+    url: '/videos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/videos.html',
+        controller: 'videosCtrl'
+      }
+    }
+  })
+
    .state('app.newslist', {
     url: '/newslist/:id',
     views: {

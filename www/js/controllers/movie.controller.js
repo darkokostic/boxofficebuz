@@ -1,7 +1,7 @@
 /* global app */
 'use strict';
 app
-.controller('newsCtrl',[
+.controller('movieCtrl',[
   '$scope', 
   '$stateParams', 
   '$ionicLoading',
@@ -40,7 +40,7 @@ app
       $scope.showShare = false;
     } 
   };
-  dataservice.getDataByID($stateParams.id).then(function(d){
+  dataservice.getMovieByID($stateParams.id).then(function(d){
     console.log(d.data);
     $scope.data = d.data;
     $scope.data.date = Date.parse($scope.data.date);

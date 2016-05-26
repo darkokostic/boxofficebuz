@@ -1,7 +1,7 @@
 /* global app */
 'use strict';
 app
-.controller('newsCtrl',[
+.controller('videoCtrl',[
   '$scope', 
   '$stateParams', 
   '$ionicLoading',

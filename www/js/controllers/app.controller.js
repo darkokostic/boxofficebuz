@@ -21,10 +21,6 @@ app
   $scope.pullToData = function() {
     $rootScope.$broadcast('pullToData');
   }; 
-  
-  dataservice.getCategoryList().then(function (d) {
-    $scope.categories = d.data;
-  });
 
   $scope.promtRate = function(){
     $cordovaAppRate.promptForRating(true);

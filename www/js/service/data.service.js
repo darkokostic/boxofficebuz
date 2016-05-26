@@ -49,10 +49,39 @@ service('dataservice', [
 			return dfd.promise;
 		}
 
-		function _getCategoryList () {
+		function _getLatestMovies (enpoint) {
 			var dfd = $q.defer();
-			var url = appConfig.baseURL + '/categories';
-			$http.get(url)
+			if (!enpoint) {
+				enpoint = appConfig.apiEndPoint + '/v1/movie/latest';
+			}
+			var url = enpoint;
+			$http.get(url, {
+				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
+			})
+			.success(function(data){
+				dfd.resolve(data);
+			});
+			return dfd.promise;
+		}
+
+		function _getMovieByID (id) {
+			var dfd = $q.defer();
+			var url = appConfig.apiEndPoint+'/v1/movie/'+id;
+			$http.get(url, {
+				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
+			})
+			.success(function(data){
+				dfd.resolve(data);
+			});
+			return dfd.promise;   
+		}
+
+		function _getMoviesImages () {
+			var dfd = $q.defer();
+			var url = appConfig.apiEndPoint + '/v1/movie/178958/images';;
+			$http.get(url, {
+				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
+			})
 			.success(function(data){
 				dfd.resolve(data);
 			});
@@ -61,8 +90,10 @@ service('dataservice', [
 
 		function _getDataByID (id) {
 			var dfd = $q.defer();
-			var url = appConfig.apiEndPoint+'/'+id;
-			$http.get(url)
+			var url = appConfig.apiEndPoint+'/v1/news/'+id;
+			$http.get(url, {
+				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
+			})
 			.success(function(data){
 				dfd.resolve(data);
 			});
@@ -119,7 +150,9 @@ service('dataservice', [
 			getFeaturedNews : _getFeaturedNews,
 			getDataByID: _getDataByID,
 			getLatestNews: _getLatestNews,
-			getCategoryList: _getCategoryList,
+			getLatestMovies: _getLatestMovies,
+			getMoviesImages: _getMoviesImages,
+			getMovieByID: _getMovieByID,
 			getNewsListByID: _getNewsListByID,
 			getSearch: _getSearch,
 			like : _like,

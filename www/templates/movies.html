@@ -1,0 +1,13 @@
+<ion-view >
+  <ion-content class="homepage" lazy-scroll>
+
+    <h2 class="heading-todays"><span>Movies</span></h2>
+    <ion-list class="todays-news">
+      <ion-item ng-repeat="singleMovie in data" ui-sref="app.movie({id: singleMovie.id})" style="background: url({{dataImg.file}}) #000 no-repeat center; background-size: contain;">
+        <h4 class="likes"><i class="ion-heart"></i>{{singleMovie.likes}}</h4>
+        <h3>{{singleMovie.title}}</h3>
+      </ion-item>
+    </ion-list>
+    
+  </ion-content>
+</ion-view>
