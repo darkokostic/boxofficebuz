@@ -15,8 +15,9 @@ app
 	appConfig
 ) {
   $scope.$on('$ionicView.enter',function(){
-    dataservice.getNewsListByID($stateParams.id).then(function(d){
-      $scope.data = d.data.data;
+    dataservice.getLatestTv().then(function(d){
+      console.log(d.data);
+      $scope.data = d.data;
       $rootScope.$broadcast('hideloader');
       if ($scope.data) { $rootScope.$broadcast('hideloader');}     
     });    

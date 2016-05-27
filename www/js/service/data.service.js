@@ -49,6 +49,7 @@ service('dataservice', [
 			return dfd.promise;
 		}
 
+     	// movies
 		function _getLatestMovies (enpoint) {
 			var dfd = $q.defer();
 			if (!enpoint) {
@@ -88,6 +89,68 @@ service('dataservice', [
 			return dfd.promise;
 		}
 
+		//TV
+
+		function _getLatestTv (enpoint) {
+			var dfd = $q.defer();
+			if (!enpoint) {
+				enpoint = appConfig.apiEndPoint + '/v1/tv/latest';
+			}
+			var url = enpoint;
+			$http.get(url, {
+				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
+			})
+			.success(function(data){
+				dfd.resolve(data);
+			});
+			return dfd.promise;
+		}
+
+		function _getTvByID (id) {
+			var dfd = $q.defer();
+			var url = appConfig.apiEndPoint+'/v1/tv/'+id;
+			$http.get(url, {
+				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
+			})
+			.success(function(data){
+				dfd.resolve(data);
+			});
+			return dfd.promise;   
+		}
+
+		// Games
+
+		function _getLatestGames (enpoint) {
+			var dfd = $q.defer();
+			if (!enpoint) {
+				enpoint = appConfig.apiEndPoint + '/v1/game/latest';
+			}
+			var url = enpoint;
+			$http.get(url, {
+				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
+			})
+			.success(function(data){
+				dfd.resolve(data);
+			});
+			return dfd.promise;
+		}
+
+		// Videos
+
+		function _getLatestVideos (enpoint) {
+			var dfd = $q.defer();
+			if (!enpoint) {
+				enpoint = appConfig.apiEndPoint + '/v1/game/latest';
+			}
+			var url = enpoint;
+			$http.get(url, {
+				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
+			})
+			.success(function(data){
+				dfd.resolve(data);
+			});
+			return dfd.promise;
+		}
 		function _getDataByID (id) {
 			var dfd = $q.defer();
 			var url = appConfig.apiEndPoint+'/v1/news/'+id;
@@ -155,6 +218,9 @@ service('dataservice', [
 			getMovieByID: _getMovieByID,
 			getNewsListByID: _getNewsListByID,
 			getSearch: _getSearch,
+			getLatestTv: _getLatestTv,
+			getLatestGames: _getLatestGames,
+			getTvByID: _getTvByID,
 			like : _like,
 			isLiked: _isLiked,
 			userLikes : _userLikes

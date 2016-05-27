@@ -5,7 +5,7 @@
     <ion-list class="todays-news">
       <ion-item ng-repeat="singleTv in data" ui-sref="app.tvSingle({id: singleTv.id})" style="background: url({{singleTv.image}}) #000 no-repeat center; background-size: contain;">
         <h4 class="likes"><i class="ion-heart"></i>{{singleTv.likes}}</h4>
-        <h3>{{singleTv.heading}}</h3>
+        <h3>{{singleTv.title}}</h3>
       </ion-item>
     </ion-list>
     
