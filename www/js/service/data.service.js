@@ -324,7 +324,7 @@ service('dataservice', [
 			getMovieByID: _getMovieByID,
 			getMovieTrailerByID: _getMovieTrailerByID,
 			getTvTrailerByID: _getMovieTrailerByID,
-			getGameTrailerByID: _getMovieTrailerByID,
+			getGameTrailerByID: _getGameTrailerByID,
 			getReviewByID: _getReviewByID,
 			getNewsListByID: _getNewsListByID,
 			getSearch: _getSearch,
