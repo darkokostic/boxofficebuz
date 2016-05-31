@@ -199,7 +199,7 @@ service('dataservice', [
 		function _getTvTrailers (enpoint) {
 			var dfd = $q.defer();
 			if (!enpoint) {
-				enpoint = appConfig.apiEndPoint + '/v1/videos/tv';
+				enpoint = appConfig.apiEndPoint + '/v1/videos/show';
 			}
 			var url = enpoint;
 			$http.get(url, {
@@ -323,7 +323,7 @@ service('dataservice', [
 			getGamesTrailers: _getGamesTrailers,
 			getMovieByID: _getMovieByID,
 			getMovieTrailerByID: _getMovieTrailerByID,
-			getTvTrailerByID: _getMovieTrailerByID,
+			getTvTrailerByID: _getTvTrailerByID,
 			getGameTrailerByID: _getGameTrailerByID,
 			getReviewByID: _getReviewByID,
 			getNewsListByID: _getNewsListByID,
