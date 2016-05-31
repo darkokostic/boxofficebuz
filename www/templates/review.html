@@ -52,13 +52,13 @@
 
   <ion-content ng-click="hideshare()" on-scroll-complete="showad()" delegate-handle="scroller">
   	<pre-img ratio="_1_1" helper-class="news-img">
-  	  <img class="thumbnail" ng-src="{{data.thumbnail}}" spinner-on-load>
+  	  <img class="thumbnail" ng-src="{{data[0].thumbnail}}" spinner-on-load>
   	</pre-img>
 		
 		<div class="heading-todays-v2">
-			<h3>{{data.title}}</h3>
-			<div><i class="ion-ios-calendar-outline"></i> <span>{{data.date | date:'yyyy-MM-dd' }}</span></div>
-			<div><i class="ion-ios-time-outline"></i> <span>{{data.date | date:'HH:mm' }}</span></div>
+			<h3>{{data[0].title}}</h3>
+			<div><i class="ion-ios-calendar-outline"></i> <span>{{data[0].date | date:'yyyy-MM-dd' }}</span></div>
+			<div><i class="ion-ios-time-outline"></i> <span>{{data[0].date | date:'HH:mm' }}</span></div>
 		</div>
 
 		<!-- <h3 class="heading-todays news-detail">{{data.source}} <span><i class="ion-ios-calendar-outline"></i>
@@ -67,10 +67,10 @@
 		</h3> -->
 
 		<div class="news-desc padding">
-			<h3>{{data.title}}</h3>
+			<h3>{{data[0].title}}</h3>
 		
 
-			<div ng-bind-html=data.synopsis>
+			<div ng-bind-html=data[0].article>
 				
 			</div>
 		</div>

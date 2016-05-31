@@ -3,13 +3,13 @@
   
     <h2 class="heading-todays" ng-if="bookmarkItems.length > 0"><span>Bookmarks</span></h2>
     <ion-list class="todays-news" ng-if="bookmarkItems.length > 0">
-      <ion-item ng-repeat="bookmarkItem in bookmarkItems"  style="background: url({{imageURL}}{{bookmarkItem.image}}) #000 no-repeat center; background-size: contain;">
+      <ion-item ng-repeat="bookmarkItem in bookmarkItems"  style="background: url({{bookmarkItem.thumbnail}}) #000 no-repeat center; background-size: contain;">
         <button class="button icon ion-ios-close-empty remove-bookmark-btn"
         ng-click="removeBookmark(bookmarkItem.id)"></button>
         <span like-btn newsid="bookmarkItem.id" likes="bookmarkItem.likes"></span>
         <a ui-sref="app.news({id: bookmarkItem.id})" class="item-content">
          
-          <h3>{{bookmarkItem.heading}}</h3>
+          <h3>{{bookmarkItem.title}}</h3>
         </a>        
       </ion-item>
     </ion-list>

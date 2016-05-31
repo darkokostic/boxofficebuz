@@ -41,8 +41,8 @@ app
     } 
   };
   dataservice.getDataByID($stateParams.id).then(function(d){
-    console.log(d.data);
     $scope.data = d.data;
+    console.log($scope.data);
     $scope.data.date = Date.parse($scope.data.date);
     $rootScope.$broadcast('hideloader');
   });
