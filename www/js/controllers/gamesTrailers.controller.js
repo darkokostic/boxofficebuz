@@ -1,7 +1,7 @@
 /* global app */
 'use strict';
 app
-.controller('moviesCtrl',[
+.controller('gamesTrailersCtrl',[
   '$scope', 
   '$stateParams', 
   '$rootScope',
@@ -15,12 +15,12 @@ app
 	appConfig
 ) {
   $scope.$on('$ionicView.enter',function(){
-    dataservice.getLatestMovies().then(function(d){
+    dataservice.getGamesTrailers().then(function(d){
       console.log(d.data);
       $scope.data = d.data;
       $rootScope.$broadcast('hideloader');
       if ($scope.data) { $rootScope.$broadcast('hideloader');}     
-    });
+    });    
   });
 
 }]);

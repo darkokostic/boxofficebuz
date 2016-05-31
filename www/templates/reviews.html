@@ -1,0 +1,13 @@
+<ion-view >
+  <ion-content class="homepage" lazy-scroll>
+
+    <h2 class="heading-todays"><span>Reviews</span></h2>
+    <ion-list class="todays-news">
+      <ion-item ng-repeat="reviews in data" ui-sref="app.review({id: reviews.id})" style="background: url('{{reviews.thumbnail}}') #000 no-repeat center; background-size: contain;">
+        <h4 class="likes"><i class="ion-heart"></i>{{reviews.likes}}</h4>
+        <h3>{{reviews.title}}</h3>
+      </ion-item>
+    </ion-list>
+    
+  </ion-content>
+</ion-view>

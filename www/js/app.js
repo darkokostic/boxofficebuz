@@ -155,6 +155,26 @@ app = angular.module('newsapp', [
     }
   })
 
+   .state('app.reviews', {
+    url: '/reviews',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/reviews.html',
+        controller: 'reviewsCtrl'
+      }
+    }
+  })
+
+   .state('app.review', {
+    url: '/review/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/review.html',
+        controller: 'reviewCtrl'
+      }
+    }
+  })
+
    .state('app.news', {
     url: '/news/:id',
     views: {
@@ -195,12 +215,32 @@ app = angular.module('newsapp', [
     }
   })
 
-   .state('app.video', {
-    url: '/video/:id',
+   .state('app.movieTrailer', {
+    url: '/movieTrailer/:id',
     views: {
       'menuContent': {
-        templateUrl: 'templates/video.html',
-        controller: 'videoCtrl'
+        templateUrl: 'templates/movieTrailer.html',
+        controller: 'movieTrailerCtrl'
+      }
+    }
+  })
+
+   .state('app.tvTrailer', {
+    url: '/tvTrailer/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/tvTrailer.html',
+        controller: 'tvTrailerCtrl'
+      }
+    }
+  })
+
+   .state('app.gameTrailer', {
+    url: '/gameTrailer/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/gameTrailer.html',
+        controller: 'gameTrailerCtrl'
       }
     }
   })
@@ -235,12 +275,32 @@ app = angular.module('newsapp', [
     }
   })
 
-   .state('app.videos', {
-    url: '/videos',
+   .state('app.moviesTrailers', {
+    url: '/moviesTrailers',
     views: {
       'menuContent': {
-        templateUrl: 'templates/videos.html',
-        controller: 'videosCtrl'
+        templateUrl: 'templates/moviesTrailers.html',
+        controller: 'moviesTrailersCtrl'
+      }
+    }
+  })
+
+   .state('app.tvTrailers', {
+    url: '/tvTrailers',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/tvTrailers.html',
+        controller: 'tvTrailersCtrl'
+      }
+    }
+  })
+
+   .state('app.gamesTrailers', {
+    url: '/gamesTrailers',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/gamesTrailers.html',
+        controller: 'gamesTrailersCtrl'
       }
     }
   })

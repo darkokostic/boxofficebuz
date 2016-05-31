@@ -1,7 +1,7 @@
 /* global app */
 'use strict';
 app
-.controller('videosCtrl',[
+.controller('moviesTrailersCtrl',[
   '$scope', 
   '$stateParams', 
   '$rootScope',
@@ -15,8 +15,9 @@ app
 	appConfig
 ) {
   $scope.$on('$ionicView.enter',function(){
-    dataservice.getNewsListByID($stateParams.id).then(function(d){
-      $scope.data = d.data.data;
+    dataservice.getMoviesTrailers().then(function(d){
+      console.log(d.data);
+      $scope.data = d.data;
       $rootScope.$broadcast('hideloader');
       if ($scope.data) { $rootScope.$broadcast('hideloader');}     
     });    

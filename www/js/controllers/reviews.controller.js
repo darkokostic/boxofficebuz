@@ -1,7 +1,7 @@
 /* global app */
 'use strict';
 app
-.controller('moviesCtrl',[
+.controller('reviewsCtrl',[
   '$scope', 
   '$stateParams', 
   '$rootScope',
@@ -15,7 +15,7 @@ app
 	appConfig
 ) {
   $scope.$on('$ionicView.enter',function(){
-    dataservice.getLatestMovies().then(function(d){
+    dataservice.getLatestReviews().then(function(d){
       console.log(d.data);
       $scope.data = d.data;
       $rootScope.$broadcast('hideloader');

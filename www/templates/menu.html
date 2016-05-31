@@ -22,11 +22,15 @@
   <ion-side-menu side="right">
     <ion-content>
       <ion-list>
-
+        <ion-item menu-close ui-sref="app.home">
+            <i class="ion-ios-home-outline"></i>News
+        </ion-item>
+        <ion-item menu-close ui-sref="app.reviews">
+            <i class="ion-ios-home-outline"></i>Reviews
+        </ion-item>
         <ion-item ng-click="showSubMenu = !showSubMenu">
           <i class="ion-ios-list-outline"></i>Category
           <ion-list ng-show="showSubMenu" class="submenu">
-
             <ion-item menu-close class="submenu" ui-sref="app.movies">
               <i class="ion-android-send"></i>Movies
             </ion-item>
@@ -36,10 +40,20 @@
             <ion-item menu-close class="submenu" ui-sref="app.games">
               <i class="ion-android-send"></i>Games
             </ion-item>
-            <ion-item menu-close class="submenu" ui-sref="app.videos">
-              <i class="ion-android-send"></i>Videos
+          </ion-list>
+        </ion-item>
+        <ion-item ng-click="showSubMenu = !showSubMenu">
+          <i class="ion-ios-videocam-outline"></i>Videos
+          <ion-list ng-show="showSubMenu" class="submenu">
+            <ion-item menu-close class="submenu" ui-sref="app.moviesTrailers">
+              <i class="ion-android-send"></i>Movies trailers
             </ion-item>
-
+            <ion-item menu-close class="submenu" ui-sref="app.tvTrailers">
+              <i class="ion-android-send"></i>TV trailers
+            </ion-item>
+            <ion-item menu-close class="submenu" ui-sref="app.gamesTrailers">
+              <i class="ion-android-send"></i>Games trailers
+            </ion-item>
           </ion-list>
         </ion-item>
         <ion-item menu-close ui-sref="app.bookmarklist">

@@ -1,0 +1,13 @@
+<ion-view >
+  <ion-content class="homepage" lazy-scroll>
+
+    <h2 class="heading-todays"><span>TV Trailers</span></h2>
+    <ion-list class="todays-news">
+      <ion-item ng-repeat="singleTv in data" ui-sref="app.tvTrailer({id: singleTv.tv_id})" style="background: url({{singleTv.thumbnail}}) #000 no-repeat center; background-size: contain;">
+        <h4 class="likes"><i class="ion-heart"></i>{{singleTv.likes}}</h4>
+        <h3>{{singleTv.title}}</h3>
+      </ion-item>
+    </ion-list>
+    
+  </ion-content>
+</ion-view>
