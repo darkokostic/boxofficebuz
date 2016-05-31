@@ -67,12 +67,11 @@
 		</h3> -->
 
 		<div class="news-desc padding">
-			<h3>{{data.title}}</h3>
-		
-
-			<div ng-bind-html=data.article>
-				
-			</div>
+		    <ion-list class="todays-news">
+		      <ion-item ng-repeat="singleFrame in trustedContent" ui-sref="app.movie({id: singleMovie.id})" style=" #000 no-repeat center; background-size: contain;">
+		        <div ng-bind-html="singleFrame"></div>
+		      </ion-item>
+		    </ion-list>
 		</div>
 
 
