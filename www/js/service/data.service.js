@@ -106,9 +106,9 @@ service('dataservice', [
 			return dfd.promise;   
 		}
 
-		function _getMoviesImages () {
+		function _getMoviesImages(id) {
 			var dfd = $q.defer();
-			var url = appConfig.apiEndPoint + '/v1/movie/178958/images';;
+			var url = appConfig.apiEndPoint + '/v1/movie/'+id+'/images';;
 			$http.get(url, {
 				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
 			})

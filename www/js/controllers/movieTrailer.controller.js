@@ -45,12 +45,6 @@ app
   dataservice.getMovieTrailerByID($stateParams.id).then(function(d){
     console.log(d.data);
     $scope.data = d.data;
-    var iframe = [];
-    for(var i = 0; i < d.data.length; i++) {
-      iframe.push($sce.trustAsHtml(d.data[i].embed_code));
-    }
-    $scope.trustedContent = iframe;
-    console.log($scope.trustedContent);
     $scope.data.date = Date.parse($scope.data.date);
     $rootScope.$broadcast('hideloader');
   });
