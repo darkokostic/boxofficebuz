@@ -40,10 +40,9 @@ app
       $scope.showShare = false;
     } 
   };
-  dataservice.getDataByID($stateParams.id).then(function(d){
+  dataservice.getGameByID($stateParams.id).then(function(d){
     console.log(d.data);
     $scope.data = d.data;
-    $scope.data.date = Date.parse($scope.data.date);
     $rootScope.$broadcast('hideloader');
   });
 

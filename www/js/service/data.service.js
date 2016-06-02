@@ -164,6 +164,18 @@ service('dataservice', [
 			return dfd.promise;
 		}
 
+		function _getGameByID (id) {
+			var dfd = $q.defer();
+			var url = appConfig.apiEndPoint+'/v1/game/'+id;
+			$http.get(url, {
+				headers: {'X-Mashape-Key': '072Cp9LkL7mshNbqvpKhGC3cTjOBp1ZVwTJjsnFNr2n5JansQO'}
+			})
+			.success(function(data){
+				dfd.resolve(data);
+			});
+			return dfd.promise;   
+		}
+
 		// VIDEOS
 
 		//movies trailers
@@ -331,6 +343,7 @@ service('dataservice', [
 			getLatestTv: _getLatestTv,
 			getLatestGames: _getLatestGames,
 			getTvByID: _getTvByID,
+			getGameByID: _getGameByID,
 			like : _like,
 			isLiked: _isLiked,
 			userLikes : _userLikes
