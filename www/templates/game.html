@@ -1,7 +1,5 @@
 <ion-view class="news-details">
 	<ion-nav-buttons side="right" class="icon ion-share">
-		<button class="button button-icon button-clear ion-ios-book-outline" ng-click="addToBookmark(data)">
-	  </button>
 	  <button class="button button-icon button-clear ion-android-share-alt" ng-click="sharePost()">
 	  </button>
 	</ion-nav-buttons>
@@ -57,8 +55,8 @@
 		
 		<div class="heading-todays-v2">
 			<h3>{{data[0].title}}</h3>
-			<div><i class="ion-ios-calendar-outline"></i> <span>{{data[0].date | date:'yyyy-MM-dd' }}</span></div>
-			<div><i class="ion-ios-time-outline"></i> <span>{{data[0].date | date:'HH:mm' }}</span></div>
+			<div><i class="ion-ios-calendar-outline"></i> <span>{{data[0].release | date:'yyyy-MM-dd' }}</span></div>
+			<div><i class="ion-ios-time-outline"></i> <span>{{data[0].release | date:'HH:mm' }}</span></div>
 		</div>
 
 		<!-- <h3 class="heading-todays news-detail">{{data.source}} <span><i class="ion-ios-calendar-outline"></i>
@@ -69,8 +67,11 @@
 		<div class="news-desc padding">
 			<h3>{{data[0].title}}</h3>
 		
+			<p><b>Genre:</b> {{data[0].genre}}</p>
+			<p><b>Platforms:</b> {{data[0].platforms}}</p>
+			<p><b>Publisher:</b> {{data[0].publisher}} <b>Developer:</b> {{data[0].developer}}</p>
 
-			<div ng-bind-html=data[0].article>
+			<div ng-bind-html=data[0].synopsis>
 				
 			</div>
 		</div>

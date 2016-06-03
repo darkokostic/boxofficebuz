@@ -1,6 +1,6 @@
 {
   "name": "cnewsapp",
-  "app_id": "96d4b667",
+  "app_id": "624b6c99",
   "gulpStartupTasks": [
     "sass",
     "watch"

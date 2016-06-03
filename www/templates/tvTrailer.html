@@ -1,7 +1,5 @@
 <ion-view class="news-details">
 	<ion-nav-buttons side="right" class="icon ion-share">
-		<button class="button button-icon button-clear ion-ios-book-outline" ng-click="addToBookmark(data)">
-	  </button>
 	  <button class="button button-icon button-clear ion-android-share-alt" ng-click="sharePost()">
 	  </button>
 	</ion-nav-buttons>
@@ -56,9 +54,7 @@
   	</pre-img>
 		
 		<div class="heading-todays-v2">
-			<h3>{{data.title}}</h3>
-			<div><i class="ion-ios-calendar-outline"></i> <span>{{data.date | date:'yyyy-MM-dd' }}</span></div>
-			<div><i class="ion-ios-time-outline"></i> <span>{{data.date | date:'HH:mm' }}</span></div>
+			<h3>Trailers</h3>
 		</div>
 
 		<!-- <h3 class="heading-todays news-detail">{{data.source}} <span><i class="ion-ios-calendar-outline"></i>
@@ -67,9 +63,9 @@
 		</h3> -->
 
 		<div class="news-desc padding">
-		    <ion-list class="todays-news">
-		      <ion-item ng-repeat="singleFrame in trustedContent" style=" #000 no-repeat center; background-size: contain;">
-		        <div ng-bind-html="singleFrame"></div>
+		    <ion-list class="">
+		      <ion-item ng-repeat="singleFrame in trustedContent" style="height: 40%; background: #000 no-repeat center; background-size: contain;">
+		      <iframe ng-src='{{singleFrame}}' width="100%" frameborder='0' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
 		      </ion-item>
 		    </ion-list>
 		</div>

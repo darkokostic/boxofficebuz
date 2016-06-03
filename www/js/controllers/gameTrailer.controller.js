@@ -47,7 +47,7 @@ app
     $scope.data = d.data;
     var iframe = [];
     for(var i = 0; i < d.data.length; i++) {
-      iframe.push($sce.trustAsHtml(d.data[i].embed_code));
+      iframe.push($sce.trustAsResourceUrl(d.data[i].embed_url));
     }
     $scope.trustedContent = iframe;
     console.log($scope.trustedContent);
