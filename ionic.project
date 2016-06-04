@@ -1,6 +1,6 @@
 {
-  "name": "cnewsapp",
-  "app_id": "624b6c99",
+  "name": "boxofficebuz",
+  "app_id": "5e45f0a2",
   "gulpStartupTasks": [
     "sass",
     "watch"

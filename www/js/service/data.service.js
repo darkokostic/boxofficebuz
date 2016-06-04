@@ -277,25 +277,6 @@ service('dataservice', [
 			return dfd.promise;   
 		}
 
-		function _getNewsListByID (id) {
-			var dfd = $q.defer();
-			var url = appConfig.baseURL+'/categories/'+id;
-			$http.get(url)
-			.success(function(data){
-				dfd.resolve(data);
-			});
-			return dfd.promise;   
-		}
-
-		function _getSearch (query) { 
-			var dfd = $q.defer();
-			var url = appConfig.apiEndPoint+'/search';
-			$http.post(url, query).success(function(response) {
-				dfd.resolve(response);
-			});
-			return dfd.promise;
-		}
-
 		function _like(id) {
 			var dfd = $q.defer();
 			var type = 'dislike';
@@ -338,8 +319,6 @@ service('dataservice', [
 			getTvTrailerByID: _getTvTrailerByID,
 			getGameTrailerByID: _getGameTrailerByID,
 			getReviewByID: _getReviewByID,
-			getNewsListByID: _getNewsListByID,
-			getSearch: _getSearch,
 			getLatestTv: _getLatestTv,
 			getLatestGames: _getLatestGames,
 			getTvByID: _getTvByID,

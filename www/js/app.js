@@ -293,17 +293,7 @@ app = angular.module('newsapp', [
         controller: 'gamesTrailersCtrl'
       }
     }
-  })
-
-  .state('app.walkthrough', {
-      url: '/walkthrough',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/walkthrough.html',
-          controller : 'walkthrough'
-        }
-      }
-    });
+  });
 
   // if none of the above states are matched, use this as the fallback
   var appFirstRun = localStorage.getItem('appFirstRun');
@@ -311,7 +301,7 @@ app = angular.module('newsapp', [
   if(appFirstRun === 'true'){
     $urlRouterProvider.otherwise('/app/home');
   }else{
-    $urlRouterProvider.otherwise('/app/walkthrough');
+    $urlRouterProvider.otherwise('/app/home');
   }
 
 });
