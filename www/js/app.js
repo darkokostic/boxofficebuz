@@ -135,16 +135,6 @@ app = angular.module('newsapp', [
     controller: 'AppCtrl'
   })
 
-   .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html',
-        controller: 'searchCtrl'
-      }
-    }
-  })
-
    .state('app.home', {
     url: '/home',
     views: {
@@ -305,25 +295,6 @@ app = angular.module('newsapp', [
     }
   })
 
-   .state('app.newslist', {
-    url: '/newslist/:id',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/news-list.html',
-        controller: 'newslistCtrl'
-      }
-    }
-  })
-
-   .state('app.bookmarklist', {
-    url: '/bookmarklist',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/bookmark-list.html',
-        controller: 'bookmarkListCtrl'
-      }
-    }
-  })
   .state('app.walkthrough', {
       url: '/walkthrough',
       views: {
@@ -332,16 +303,7 @@ app = angular.module('newsapp', [
           controller : 'walkthrough'
         }
       }
-    })
-    .state('app.admob', {
-    url: '/admob',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/admob.html',
-        controller : 'AdCtrl'
-      }
-    }
-  });
+    });
 
   // if none of the above states are matched, use this as the fallback
   var appFirstRun = localStorage.getItem('appFirstRun');
