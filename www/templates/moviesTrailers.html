@@ -4,7 +4,6 @@
     <h2 class="heading-todays"><span>Movies Trailers</span></h2>
     <ion-list class="todays-news">
       <ion-item ng-repeat="singleMovie in data" ui-sref="app.movieTrailer({id: singleMovie.movie_id})" style="background: url({{singleMovie.thumbnail}}) #000 no-repeat center; background-size: contain;">
-        <h4 class="likes"><i class="ion-heart"></i>{{singleMovie.likes}}</h4>
         <h3>{{singleMovie.title}}</h3>
       </ion-item>
     </ion-list>
